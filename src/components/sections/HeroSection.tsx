@@ -74,7 +74,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 max-w-5xl mx-auto"
           >
-            {featureCards.map((card, index) => (
+            {featureCards.map((card) => (
               <motion.div
                 key={card.title}
                 whileHover={{ y: -5 }}
