@@ -77,7 +77,7 @@ export default function Page() {
             Ready to get started?
           </h2>
           <p className="text-xl text-muted-foreground mb-10">
-            Let's discuss how we can implement Multi-model Understanding to drive growth for your business.
+            Let&apos;s discuss how we can implement Multi-model Understanding to drive growth for your business.
           </p>
           <Button size="lg" className="h-14 px-10 text-lg rounded-full shadow-lg hover:scale-105 transition-transform group" asChild>
             <Link href="/contact">

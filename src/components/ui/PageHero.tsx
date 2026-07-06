@@ -32,7 +32,7 @@ export function PageHero({ title, description, breadcrumbs }: PageHeroProps) {
           className="flex items-center justify-center space-x-2 text-sm text-muted-foreground font-medium mb-6"
         >
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-          {breadcrumbs.map((crumb, index) => (
+          {breadcrumbs.map((crumb) => (
             <React.Fragment key={crumb.label}>
               <ChevronRight className="w-4 h-4" />
               {crumb.href ? (
