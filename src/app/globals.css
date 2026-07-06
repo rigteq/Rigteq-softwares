@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #020817;
+
+    --primary: 5 52 128;
+    --primary-foreground: #ffffff;
+
+    --secondary: 116 156 220;
+    --secondary-foreground: #020817;
+
+    --accent: 129 140 193;
+    --accent-foreground: #ffffff;
+
+    --muted: 241 245 249;
+    --muted-foreground: #64748b;
+
+    --card: #ffffff;
+    --card-foreground: #020817;
+
+    --border: #e2e8f0;
+    
+    --radius: 1rem; /* 16px */
+  }
+
+  .dark {
+    --background: #020817;
+    --foreground: #f8fafc;
+
+    --primary: 116 156 220;
+    --primary-foreground: #020817;
+
+    --secondary: 5 52 128;
+    --secondary-foreground: #f8fafc;
+
+    --accent: 129 140 193;
+    --accent-foreground: #ffffff;
+
+    --muted: 15 23 42;
+    --muted-foreground: #94a3b8;
+
+    --card: #020817;
+    --card-foreground: #f8fafc;
+
+    --border: #1e293b;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-black/70 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+  .glass-card {
+    @apply bg-white/80 dark:bg-black/50 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)];
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary;
+  }
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-primary to-accent;
+  }
+}
