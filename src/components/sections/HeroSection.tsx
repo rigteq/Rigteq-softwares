@@ -107,11 +107,13 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform inline-block" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base rounded-full group relative overflow-hidden hover:text-primary-foreground hover:bg-primary transition-colors border-primary/20">
-              <span className="relative z-10 flex items-center">
-                View Solutions
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform inline-block" />
-              </span>
+            <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base rounded-full group relative overflow-hidden hover:text-primary-foreground hover:bg-primary transition-colors border-primary/20" asChild>
+              <Link href="/solutions">
+                <span className="relative z-10 flex items-center">
+                  View Solutions
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform inline-block" />
+                </span>
+              </Link>
             </Button>
           </motion.div>
         </div>
