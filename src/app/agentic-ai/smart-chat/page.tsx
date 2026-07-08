@@ -3,90 +3,109 @@
 import React from "react"
 import { PageHero } from "@/components/ui/PageHero"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { ArrowRight, MessageSquare, Brain, Zap, Settings, LayoutGrid, RefreshCw } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
-export default function Page() {
+export default function SmartChatPage() {
   return (
-    <>
-      <PageHero 
-        title="Smart Agent Chat"
-        description="Deploy context-aware conversational bots that provide accurate, instant answers to your users."
-        breadcrumbs={[{"label":"Agentic AI"},{"label":"Smart Chat"}]}
-      />
-      
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="space-y-8"
-            >
-              <h2 className="text-3xl md:text-5xl font-bold font-heading">
-                Elevate Your Business with <span className="text-gradient">Smart Agent Chat</span>
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Deploy context-aware conversational bots that provide accurate, instant answers to your users. Our solutions are designed to scale with your enterprise, offering robust performance, security, and unparalleled innovation.
-              </p>
-              
-              <ul className="space-y-4">
-                {[
-                  "Seamless Integration",
-                  "Enterprise-grade Security",
-                  "Scalable Architecture",
-                  "24/7 Dedicated Support"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center text-foreground">
-                    <CheckCircle2 className="w-6 h-6 text-primary mr-3 flex-shrink-0" />
-                    <span className="font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative"
-            >
-              <div className="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden glass-card relative z-10 p-2">
-                <div className="w-full h-full bg-muted rounded-2xl flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                    <span className="font-heading text-2xl text-muted-foreground z-10 text-center px-4">Smart Agent Chat <br/> Visualisation</span>
-                </div>
-              </div>
-              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-accent/20 rounded-full blur-[80px] -z-10" />
-            </motion.div>
+    <div className="min-h-screen bg-white">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-white to-primary/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center rounded-full px-4 py-1.5 bg-primary/10 text-sm font-medium text-primary mb-6">
+              Smart Agent Chat
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-6">
+              <span className="text-primary">99% Human-like</span> Conversations
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8">
+              Advanced conversational AI with natural language understanding that handles multi-turn dialogs, resolves 85% of queries, and engages users 300% longer.
+            </p>
+            <Button size="lg" className="h-14 px-8 text-lg rounded-full shadow-lg hover:scale-105 transition-transform group bg-primary text-primary-foreground" asChild>
+              <Link href="/contact">
+                Experience Smart Conversations
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5 -z-20" />
-        
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-            Ready to get started?
+      <section className="py-24 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold font-heading text-center text-foreground mb-12">
+            Conversation Quality in <span className="text-primary">24 Hours</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-10">
-            Let&apos;s discuss how we can implement Smart Agent Chat to drive growth for your business.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { stat: "99%", title: "Human-like Quality", desc: "User perception rating" },
+              { stat: "85%", title: "Query Resolution", desc: "Without human handoff" },
+              { stat: "300%", title: "Longer Engagement", desc: "User interaction time" },
+              { stat: "40+", title: "Languages", desc: "Multi-language support" }
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center bg-white rounded-2xl p-8 shadow-sm border border-border"
+              >
+                <div className="text-4xl font-bold font-heading text-primary mb-2">{item.stat}</div>
+                <div className="text-foreground font-semibold mb-2">{item.title}</div>
+                <div className="text-sm text-muted-foreground">{item.desc}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-4">Next-Generation Chat Intelligence</h2>
+            <p className="text-xl text-muted-foreground">Advanced AI that understands context, emotion, and intent for truly intelligent conversations</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { icon: MessageSquare, title: "Contextual Understanding", desc: "Maintains conversation context across multiple turns with 97% accuracy.", metric: "97% Context Retention" },
+              { icon: Brain, title: "Sentiment Analysis", desc: "Detects user emotions and adapts responses for optimal engagement.", metric: "93% Emotion Accuracy" },
+              { icon: Zap, title: "Instant Responses", desc: "Lightning-fast responses with average 0.3 second response time.", metric: "0.3s Response Time" },
+              { icon: Settings, title: "Personalization Engine", desc: "Learns user preferences and adapts conversation style accordingly.", metric: "100% Personalized" },
+              { icon: LayoutGrid, title: "Multi-Platform", desc: "Deploy across websites, mobile apps, messaging platforms, and more.", metric: "10+ Platform Support" },
+              { icon: RefreshCw, title: "Continuous Learning", desc: "AI improves over time by learning from interactions and feedback.", metric: "Self-Improving AI" }
+            ].map((feature, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-sm border border-border hover:shadow-md transition-shadow"
+              >
+                <feature.icon className="h-12 w-12 text-primary mb-6" />
+                <h3 className="text-xl font-bold font-heading mb-3 text-foreground">{feature.title}</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">{feature.desc}</p>
+                <div className="text-sm text-primary font-semibold py-2 px-3 bg-primary/10 rounded-md inline-block">
+                  {feature.metric}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-primary text-primary-foreground text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-5xl font-bold font-heading mb-6">Ready for Smarter Conversations?</h2>
+          <p className="text-xl text-primary-foreground/90 mb-10 max-w-2xl mx-auto">
+            Join 400+ companies using Smart Agent Chat to enhance user engagement
           </p>
-          <Button size="lg" className="h-14 px-10 text-lg rounded-full shadow-lg hover:scale-105 transition-transform group" asChild>
-            <Link href="/contact">
-              Talk to an Expert
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+          <Button size="lg" variant="secondary" className="h-14 px-10 text-lg rounded-full shadow-2xl hover:scale-105 transition-transform" asChild>
+            <Link href="/contact">Get Started</Link>
           </Button>
         </div>
       </section>
-    </>
+    </div>
   )
 }
