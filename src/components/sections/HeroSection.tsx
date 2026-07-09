@@ -25,8 +25,8 @@ const featureCards = [
 ]
 
 const trustedCompanies = [
-  "Microsoft", "Google", "Amazon", "IBM", "Oracle", "Salesforce", 
-  "Adobe", "Cisco", "SAP", "NVIDIA", "Intel", "Dell Technologies"
+  "Stripe", "Vercel", "Scale AI", "Hugging Face", "Cohere", "Anthropic", 
+  "Notion", "Linear", "Supabase", "OpenAI", "Figma", "Databricks"
 ]
 
 export function HeroSection() {
